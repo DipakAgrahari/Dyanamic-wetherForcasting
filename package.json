@@ -1,13 +1,21 @@
 {
-  "name": "nodejs_project",
+  "name": "dyanamicwether_forcasting",
   "version": "1.0.0",
-  "description": "creating weather nodejs",
+  "description": "",
   "main": "wetherjs.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dipakagrahari/Dyanamic-wetherForcasting.git"
+  },
   "author": "dipak",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dipakagrahari/Dyanamic-wetherForcasting/issues"
+  },
+  "homepage": "https://github.com/dipakagrahari/Dyanamic-wetherForcasting#readme",
   "dependencies": {
     "requests": "^0.3.0"
   }

@@ -23,21 +23,21 @@
     <h2 class="location"> 
         <i class="fas fa-street-view" style="color: #fff"></i>{%location%} , {%country%}</h2>
     <p id="date"> WED | OCT 23| 10.49AM</p>
-    <h1 class="temp">{%tempval%}</h1>
-    <h3 class="tempmin_max">Min {%tempmin%}| max {%tempmax%}</h3>
+    <h1 class="temp">{%tempval%}&deg;C</h1>
+    <h3 class="tempmin_max">Min {%tempmin%} | max {%tempmax%}</h3>
 </div>
     </div>
 
 <script>
     const curDate = document.getElementById("date");
     let wethercon = document.getElementById("weathercon");
-    const tempstatus="{%tempstatus%}";
-    if(tempstatus=="Sunny"){
+    const tempStatus="{%tempstatus%}";
+    if(tempStatus=="Sunny"){
         wethercon.innerHTML=" <i class='fas fa-sun' style='color: antiquewhite'></i>";
     }
-        else if(tempstatus=="Clouds"){
+        else if(tempStatus=="Clouds"){
         wethercon.innerHTML=" <i class='fas fa-cloud' style='color: antiquewhite'></i>";
-        }else if(tempstatus=="Rainy"){
+        }else if(tempStatus=="Rainy"){
         wethercon.innerHTML=" <i class='fas fa-rain' style='color: antiquewhite'></i>";
         }
         else{

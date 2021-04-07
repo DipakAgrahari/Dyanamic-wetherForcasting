@@ -1,10 +1,10 @@
 const http=require("http");
 const fs=require("fs");
 var requests=require("requests");
-// const {on}=require("events");
+ //const {on}=require("events");
 
 const homeFile=fs.readFileSync("wether.html","utf-8");
-console.log(http);
+
 
 const replaceVal=(tempVal,orgVal)=>{
     let temperature=tempVal.replace("{%tempval%}",orgVal.main.temp);
@@ -16,24 +16,21 @@ const replaceVal=(tempVal,orgVal)=>{
     return temperature;
 };
 const server=http.createServer((req, res)=>{
-    if(req.url=="/about"){
+    if(req.url=="/"){
         requests("http://api.openweathermap.org/data/2.5/weather?q=kolkata&appid=733c89ac6738e42e62d266fbc925dae0")
         .on("data",(chunk)=>{
         const objdata=JSON.parse(chunk);
         const arrData=[objdata];
-        const realTimeData=arrData.map(val=>
- replaceVal(homeFile,val)).join("");
-
-      res.write(realTimeData);
-        console.log(realTimeData);
-
+                const realTimeData=arrData.map(val=> replaceVal(homeFile,val)).join("");
+     res.write(realTimeData);
+        //console.log(realTimeData);
     })
 
     .on("end",(err)=>{
         if(err) return console.log("connection closed due to error",err);
-        // console.log("end");
+        console.log("end");
         res.end();
     });
     }
 });
-server.listen(8000, "127.0.0.1");
+server.listen(4000, "127.0.0.1");
